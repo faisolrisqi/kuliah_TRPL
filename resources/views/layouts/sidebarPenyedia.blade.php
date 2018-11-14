@@ -7,21 +7,20 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>Lapakseni</title>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style type="text/css">
-        body{
-            background: url("{{ asset('image/bg-batik2.jpg') }}") no-repeat;
-        }
+    body{
+    background: url("{{ asset('image/bg-batik2.jpg') }}") no-repeat;
+    }
     </style>
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container" style="height: 65px">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -58,12 +57,12 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('profil') }}">
+                                        <a href="{{ route('profilPenyedia') }}">
                                             Profil
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('profil') }}">
+                                        <a href="{{ route('profilPenyedia') }}">
                                             Transaksi
                                         </a>
                                     </li>
@@ -85,11 +84,82 @@
                 </div>
             </div>
         </nav>
+<div class="row" style="margin-left: 20px">
+<div>
+<div class="col-sm-3">
+<div class="list-group" id='cssmenu'>
+    <a href="{{ route('profilPenyedia') }}" class="list-group-item active">Profil</a>
+    <a href="{{ route('viewKesenian') }}" class="list-group-item">Kesenian Saya</a>
+    <a href="#" class="list-group-item">Transaksi</a>
+    <a href="#" class="list-group-item">Notifikasi</a>
+</div>
+</div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content" style="width: 800px;height: 150px;">
+    <span class="close">&times;</span>
+    <form class="form-horizontal" action="{{url('updatePassword/'.Auth::user()->id)}}" method="POST">
+        {{ csrf_field() }}
+        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <label for="password" class="col-md-4 control-label">Password Baru</label>
+
+            <div class="col-md-6">
+                <input id="password" type="password" class="form-control" name="password" required>
+
+                @if ($errors->has('password'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8 col-md-offset-4">
+                    <button type="submit" class="btn btn-primary">
+                    Ganti
+                    </button>
+            </div>
+        </div>        
+
+    </form>
+
+  </div>
+
+</div>
         @yield('content')
     </div>
-
+    </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>

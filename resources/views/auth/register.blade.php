@@ -122,10 +122,21 @@
 
                         <div class="col-md-6">
                             <select name="level" class="form-control">
-                                <option value="1">Penyedia Jasa</option>
-                                <option value="2">Penyewa Jasa</option>
+                                <option value="2">Penyedia Jasa</option>
+                                <option value="3">Penyewa Jasa</option>
                             </select>
                         </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} required="Harus Setuju gan"> 
+                                        Terima semua ketentuan yg berlaku
+                                    </label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

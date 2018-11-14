@@ -29,4 +29,10 @@ class User extends Authenticatable
      public function lev() {
     return $this-> belongsTo('App\level','level');
     }
+
+    public function daftarSeni()
+    {
+        return $this->belongTo('app\daftarArt');
+    }
+
 }

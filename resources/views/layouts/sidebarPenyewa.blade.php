@@ -7,9 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>Lapakseni</title>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style type="text/css">
@@ -18,10 +16,11 @@
         }
     </style>
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container" style="height: 65px">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -58,12 +57,12 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('profil') }}">
+                                        <a href="{{ route('profilPenyewa') }}">
                                             Profil
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('profil') }}">
+                                        <a href="{{ route('profilPenyewa') }}">
                                             Transaksi
                                         </a>
                                     </li>
@@ -85,10 +84,20 @@
                 </div>
             </div>
         </nav>
-
+<div class="row" style="margin-left: 20px">
+<div>
+<div class="col-sm-3">
+<div class="list-group" id='cssmenu'>
+    <a href="{{ route('profilPenyewa') }}" class="list-group-item active">Profil</a>
+    <a href="{{ route('viewKesenianPenyewa') }}" class="list-group-item">Daftar Seni</a>
+    <a href="#" class="list-group-item">Transaksi</a>
+    <a href="#" class="list-group-item">Notifikasi</a>
+</div>
+</div>
+</div>
         @yield('content')
     </div>
-
+    </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

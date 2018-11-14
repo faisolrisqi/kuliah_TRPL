@@ -7,9 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>Lapakseni</title>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style type="text/css">
@@ -18,10 +16,11 @@
         }
     </style>
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container" style="height: 65px">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -58,12 +57,12 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('profil') }}">
+                                        <a href="{{ route('profilAdmin') }}">
                                             Profil
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('profil') }}">
+                                        <a href="{{ route('profilAdmin') }}">
                                             Transaksi
                                         </a>
                                     </li>
@@ -85,10 +84,39 @@
                 </div>
             </div>
         </nav>
-
+<div class="row" style="margin-left: 20px">
+<div>
+<div class="col-sm-3">
+<div class="list-group" id='cssmenu'>
+    <a href="{{ route('profilAdmin') }}" class="list-group-item active">Profil</a>
+    <ul>
+    <li class='active has-sub'><a href='#'><span>Data User</span></a>
+      <ul>
+         <li class='has-sub'><a href="{{ route('userPenyediaJasa') }}"><span>Penyedia Jasa</span></a>
+         </li>
+         <li class='has-sub'><a href="{{ route('userCostumer') }}"><span>Customer</span></a>
+         </li>
+      </ul>
+   </li>
+   </ul>
+    <a href="{{ route('viewKesenianAdmin') }}" class="list-group-item">Data Kesenian</a>
+    <ul>
+    <li class='active has-sub'><a href='#'><span>Pembayaran</span></a>
+      <ul>
+         <li class='has-sub'><a href="{{ route('metod') }}"><span>Metode Pembayaran</span></a>
+         </li>
+         <li class='has-sub'><a href="{{ route('bayar') }}"><span>Data Pembayaran</span></a>
+         </li>
+      </ul>
+    </li>
+    </ul>
+    <a href="#" class="list-group-item">Notifikasi</a>
+</div>
+</div>
+</div>
         @yield('content')
     </div>
-
+    </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
