@@ -20,7 +20,7 @@ class admin extends Controller
 		return view('dashboardAdmin');
 	}
 	public function userPenyedia()
-	{
+	{ 
 		$tampil= user::where('level',2)->get();
 	return view('userPenyediaJasa',compact('tampil'));
 	}

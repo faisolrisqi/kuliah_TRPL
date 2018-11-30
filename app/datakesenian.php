@@ -12,9 +12,8 @@ class datakesenian extends Model
         'namaKesenian', 'JenisKesenian', 'tarifSewa','noTelp','alamat','deskripsi','foto','status','statusSewa','fotoSeni','user_id',
 ];
         
-    public function penyedia()
+    public function user()
     {
     	return $this->belongTo('app\User');
     }
-
 }

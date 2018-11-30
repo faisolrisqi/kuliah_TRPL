@@ -9,12 +9,15 @@ class transaksi extends Model
 	protected $table = 'transaksi';
     protected $primaryKey = 'id_sewa';
 	protected $fillable = [
-        'durasiSewa', 'tanggalSewa', 'catatan','metodePembayaran',
+        'namaKesenian','JenisKesenian','penyedia','tarifSewa','durasiSewa', 'tanggalSewa','alamatPenyewaan','catatan','metodePembayaran','status','user_id','seni_id','statusBayar','noTelp',
 ];
-
-
     public function penyedia()
     {
     	return $this->belongTo('app\User');
     }
+    public function datakesenian()
+    {
+    	return $this->belongTo('app\datakesenian');
+    }
+
 }

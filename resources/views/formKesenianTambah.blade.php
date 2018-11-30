@@ -51,7 +51,7 @@
                               <div class="form-group row">
                                 <label for="deskripsi" class="col-4 col-form-label">deskripsi</label> 
                                 <div class="col-8">
-                                  <input id="deskripsi" name="deskripsi" class="form-control here" type="text">
+                                  <input id="deskripsi" name="deskripsi" class="form-control here" type="text" >
                                 </div>
                               </div>
 
@@ -75,7 +75,7 @@
                       </div>
                       <div class="form-group">
                       <div class="col-sm-6">
-                        <input type="hidden"  class="form-control" name="statusSewa" id="statusSewa" value="Belum disewa" required>
+                        <input type="hidden"  class="form-control" name="statusSewa" id="statusSewa" value="lom disewa" required>
                       </div>
                       </div>
                       <div class="form-group">

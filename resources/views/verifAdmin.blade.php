@@ -72,6 +72,11 @@
                                 <input type="hidden"  class="form-control" name="status" id="status" value="Terverifikasi">
                               </div>
                               </div>
+                              <div class="form-group">
+                              <div class="col-sm-6">
+                                <input type="hidden"  class="form-control" name="statusSewa" id="statusSewa" value="Belum disewa">
+                              </div>
+                              </div>
                               <br><br><br>
                               <div class="form-group row">
                                 <div class="offset-4 col-8">

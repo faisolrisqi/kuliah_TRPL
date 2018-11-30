@@ -11,11 +11,10 @@
 		                </div>
                     <dir><h3>Ini Data Kesenian</h3></dir>
 		            </div>
+                
                 <div style="width: 800px;">
 		            <div class="row" style="background: white">
 		                <div class="col-md-12">
-		                    <form style="padding-left: 10px;padding-right: 10px;">
-                          {{ csrf_field() }}
                           <table>
                             <tr>
                               <td>
@@ -80,14 +79,14 @@
                               </div>
                               <br><br><br>
                               <div class="form-group row">
-                                <div class="offset-4 col-8">
-                                  <a href="#"><button type="submit" class="btn btn-success"><i class="fa fa-fw fa-list-alt"></i><font color="white">Sewa</font></button></a>
+                                <div class="offset-4 col-8" style="margin-left: 50px">
+                                  <a href="{{ url('/lanjutTransaksi/'.$viewkes->id) }}"><button type="submit" class="btn btn-success"><i class="fa fa-fw fa-list-alt"></i><font color="white">Sewa</font></button></a>
                                 </div>
                               </div>
-                            </form>
                             </div>
 		                </div>
 		              </div>
+                  
 		            </div>
 		        </div>
 		    </div>

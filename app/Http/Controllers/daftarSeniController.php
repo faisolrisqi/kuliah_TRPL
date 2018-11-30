@@ -98,6 +98,7 @@ class daftarSeniController extends Controller
         //dd($viewkes);
         return view ('sewaSeni', compact('viewkes'));
     }
+    
      public function viewTransaksi($id)
     {
         $viewkes = datakesenian::find($id);
@@ -132,6 +133,7 @@ class daftarSeniController extends Controller
         $prof->alamat= $request->alamat;
         $prof->deskripsi= $request->deskripsi;
         $prof->user_id= Auth::User()->id;
+        
 
         if ($request->file('foto') == null or $request->file('fotoSeni') == null){
             $prof->foto=$prof->foto;

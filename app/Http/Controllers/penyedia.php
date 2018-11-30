@@ -16,7 +16,7 @@ class penyedia extends Controller
 	{
 		return view('dashboardSeni');
 	}
-	public function profil()
+	public function profil($id)
     {
         return view('profilPenyedia', compact(Auth::user()->id));
     }

@@ -26,13 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function lev() {
-    return $this-> belongsTo('App\level','level');
+    public function lev() {
+        return $this-> belongsTo('App\level','level');
     }
 
-    public function daftarSeni()
+    public function datakesenian()
     {
-        return $this->belongTo('app\daftarArt');
+        return $this->hasMany('app\datakesenian');
     }
-
 }

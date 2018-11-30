@@ -40,6 +40,7 @@ class penyewa extends Controller
 	public function viewKesenian()
     {
         $tampil= datakesenian::where('status','Terverifikasi')->get();
-        return view('viewKesenianPenyewa',compact('tampil'));
+        $show= datakesenian::where('statusSewa','Belum disewa')->get();
+        return view('viewKesenianPenyewa',compact('tampil','show'));
     }
 }

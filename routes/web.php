@@ -50,6 +50,8 @@ Route::get('/lanjutTransaksi/{id}', 'daftarSeniController@viewTransaksi')->name(
 Route::post('/updateKesenian/{id}', 'daftarSeniController@updateKesenian')->name('updateKesenian');
 Route::post('/updateVerif/{id}', 'daftarSeniController@updateVerif')->name('updateVerif');
 
+Route::post('/transaksi/{id}', 'Cpemesanan@create')->name('transaksi');
+
 Route::resource('daftarSeni','daftarSeniController',['only'=> 'index','show']);
 Route::group(['middleware'=>'auth'],function()
 {
