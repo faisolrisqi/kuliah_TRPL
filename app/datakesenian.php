@@ -16,4 +16,8 @@ class datakesenian extends Model
     {
     	return $this->belongTo('app\User');
     }
+     public function transaksi()
+    {
+        return $this->hasMany('App\transaksi');
+    }
 }

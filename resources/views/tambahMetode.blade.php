@@ -14,24 +14,24 @@
                 <div style="width: 800px;">
 		            <div class="row" style="background: white">
 		                <div class="col-md-12">
-		                    <form action="{{url('/updateVerif/'.$viewkes->id)}}" method="POST" style="padding-left: 10px;padding-right: 10px;">
+		                    <form action="{{url('createRekening')}}" method="POST" style="padding-left: 10px;padding-right: 10px;">
                           {{ csrf_field() }}
                               <div class="form-group row">
                                 <label for="namaKesenian" class="col-4 col-form-label">Nama Bank</label> 
                                 <div class="col-8">
-                                  <input id="namaKesenian" name="namaKesenian" placeholder="Format Ex: BNI, BRI, Bank Jatim" class="form-control here" disabled type="text">
+                                  <input id="namaKesenian" name="nama" placeholder="Format Ex: BNI, BRI, Bank Jatim" class="form-control here" type="text">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="noTelp" class="col-4 col-form-label">No. Rekening</label> 
                                 <div class="col-8">
-                                  <input id="noTelp" name="noTelp" placeholder="Format Ex: " class="form-control here" disabled type="text">
+                                  <input id="noTelp" name="noRek" placeholder="Format Ex: " class="form-control here" type="text">
                                 </div>
                               </div>
                               <br><br><br>
                               <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                  <button name="submit" type="submit" class="btn btn-primary">Verivikasi Kesenian</button>
+                                  <button name="submit" type="submit" class="btn btn-primary">Tambah</button>
                                 </div>
                               </div>
                             </form>

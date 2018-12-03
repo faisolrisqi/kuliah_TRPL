@@ -13,11 +13,10 @@ class transaksi extends Model
 ];
     public function penyedia()
     {
-    	return $this->belongTo('app\User');
+    	return $this->belongsTo('app\User');
     }
     public function datakesenian()
     {
-    	return $this->belongTo('app\datakesenian');
+    	return $this->belongsTo('App\datakesenian','seni_id');
     }
-
 }

@@ -90,7 +90,7 @@
 <div class="list-group" id='cssmenu'>
     <a href="{{ route('profilPenyedia') }}" class="list-group-item active">Profil</a>
     <a href="{{ route('viewKesenian') }}" class="list-group-item">Kesenian Saya</a>
-    <a href="#" class="list-group-item">Transaksi</a>
+    <a href="{{ route('viewTransaksi') }}" class="list-group-item">Transaksi</a>
     <a href="#" class="list-group-item">Notifikasi</a>
 </div>
 </div>

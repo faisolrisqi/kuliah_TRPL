@@ -28,7 +28,7 @@ class Cpemesanan extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request, $id)
     {
         $penyedia = user::where('id', '=', $request->user_id)->first();
         $seni = datakesenian::where('id','=',$request->seni_id)->first();
@@ -47,15 +47,51 @@ class Cpemesanan extends Controller
             'status'=> $request->status,
             'user_id'=>  Auth::User()->id,
             'seni_id' => $request->seni_id,
-            'statusBayar' => $request->statusSewa,
+            'statusBayar' => $request->statusBayar,
             'noTelp' => $seni->noTelp,
 
             ]);
         transaksi::create($insert);
-        $tampil= datakesenian::where('status','Terverifikasi')->get();
-        return view ('viewKesenianPenyewa',compact('tampil'));
+
+        $prof=datakesenian::find($id);
+        $prof->statusSewa='Disewa';
+        $prof->save();
+
+        $show= datakesenian::where('statusSewa','Belum disewa')->get();
+        return view ('viewKesenianPenyewa',compact('show'));
     }
 
+    public function viewTransaksi()
+    {
+
+        $muncul= transaksi::where('penyedia',Auth::User()->name)->where('status','Belum Diterima')->orderBy('id_Sewa','desc')->get();
+        $muncul2= transaksi::where('penyedia',Auth::User()->name)->where('status','Diterima')->orderBy('id_Sewa','desc')->get();
+        return view('viewTransaksiPenyedia',compact('muncul','muncul2'));
+    }
+
+    public function terimaPenyedia(Request $request, $id)
+    {
+        
+        $prof=transaksi::where('id_Sewa','=',$id)->update(['status' => 'Diterima']);
+
+        $muncul= transaksi::where('penyedia',Auth::User()->name)->where('status','Belum Diterima')->orderBy('id_Sewa','desc')->get();
+        $muncul2= transaksi::where('penyedia',Auth::User()->name)->where('status','Diterima')->orderBy('id_Sewa','desc')->get();
+        return view('viewTransaksiPenyedia',compact('muncul','muncul2'));
+    }
+
+
+    public function viewTransaksiAdmin()
+    {
+        $muncul= transaksi::where('status','Diterima')->orderBy('id_Sewa','desc')->get();
+        return view('viewTransaksiPenyedia',compact('muncul'));
+    }
+
+
+    public function viewTransaksiPenyedia()
+    {
+        $muncul= transaksi::where('status','Diterima')->orderBy('id_Sewa','desc')->get();
+        return view('viewTransaksiPenyedia',compact('muncul'));
+    }
     /**
      * Store a newly created resource in storage.
      *

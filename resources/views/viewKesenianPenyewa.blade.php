@@ -20,7 +20,7 @@
 											<td class="text-center text-nowrap">Action</td>
 										</tr> -->
 
-										@foreach($tampil as $data)
+										@foreach($show as $data)
 										<div class="col-sm-4">
 										<span><img id="fotoSeni" src="{{ asset('image/seni/'.$data->fotoSeni ) }}" class="img-responsive" width="300px" height="300px" align=center></span>
 										<table>

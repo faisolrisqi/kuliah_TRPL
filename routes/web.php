@@ -27,6 +27,10 @@ Route::get('/userCostumer', 'admin@userPenyewa')->name('userCostumer');
 Route::post('/updateProfil/{id}', 'admin@updateProfil')->name('updateProfil');
 Route::post('/updatePassword/{id}', 'admin@updatePassword')->name('updatePassword');
 Route::get('/viewKesenianAdmin', 'admin@viewKesenian')->name('viewKesenianAdmin');
+Route::get('/tambahMetod', 'admin@tambahMetod')->name('tambahMetod');
+Route::post('/createRekening', 'admin@createRekening')->name('createRekening');
+
+
 
 //penyedia
 Route::get('/profilPenyedia', 'penyedia@profil')->name('profilPenyedia');
@@ -50,7 +54,13 @@ Route::get('/lanjutTransaksi/{id}', 'daftarSeniController@viewTransaksi')->name(
 Route::post('/updateKesenian/{id}', 'daftarSeniController@updateKesenian')->name('updateKesenian');
 Route::post('/updateVerif/{id}', 'daftarSeniController@updateVerif')->name('updateVerif');
 
+
+Route::get('/terimaTransaksi/{id}', 'Cpemesanan@terimaPenyedia')->name('terima');
+Route::get('/viewTransaksi', 'Cpemesanan@viewTransaksi')->name('viewTransaksi');
 Route::post('/transaksi/{id}', 'Cpemesanan@create')->name('transaksi');
+
+
+
 
 Route::resource('daftarSeni','daftarSeniController',['only'=> 'index','show']);
 Route::group(['middleware'=>'auth'],function()

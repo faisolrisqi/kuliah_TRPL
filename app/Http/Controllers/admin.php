@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
 use App\transaksi;
+use App\Mrekening;
 use App\user;
 use Redirect;
 use App\datakesenian;
@@ -15,6 +16,25 @@ class admin extends Controller
     {
         return view('profilAdmin', compact(Auth::user()->id));
     }
+    public function tambahMetod()
+    {
+    	
+    	return view('tambahMetode');
+    }
+
+    public function createRekening(Request $request)
+    {
+    	$insert = ([
+            'nama'=> $request->nama,
+            'noRek'=> $request->noRek,
+            'user_id'=>Auth::User()->id,
+            ]);	
+        Mrekening::create($insert);
+
+        return view ('dashboardAdmin');
+    }
+
+
     public function home()
 	{
 		return view('dashboardAdmin');
@@ -54,7 +74,8 @@ class admin extends Controller
     }
     public function metodBayarAdmin()
 	{
-		return view('metodBayarAdmin');
+		$tampil=Mrekening::where('user_id',Auth::User()->id)->get();
+		return view('metodBayarAdmin',compact('tampil'));
 	}
 	public function dataBayarAdmin()
 	{

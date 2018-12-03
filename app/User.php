@@ -34,4 +34,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('app\datakesenian');
     }
+    public function Mtransaksi()
+    {
+        return $this->hasMany('app\Mrekening');
+    }
 }

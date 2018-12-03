@@ -46,21 +46,21 @@
                               <div class="form-group row">
                                 <label for="tarifSewa" class="col-4 col-form-label">Durasi Sewa</label> 
                                 <div class="col-8">
-                                  <input id="tarifSewa" name="durasiSewa" value="" class="form-control here" type="text">
+                                  <input id="tarifSewa" name="durasiSewa" value="" class="form-control here" type="text" required>
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                 <label for="tarifSewa" class="col-4 col-form-label">Tanggal Sewa</label> 
                                 <div class="col-8">
-                                  <input id="tarifSewa" name="tanggalSewa" class="form-control here" type="date">
+                                  <input id="tarifSewa" name="tanggalSewa" class="form-control here" type="date" required>
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                 <label for="alamat" class="col-4 col-form-label">Alamat Penyewa</label> 
                                 <div class="col-8">
-                                  <input id="alamat" name="alamatPenyewa" value="" class="form-control here" type="text">
+                                  <input id="alamat" name="alamatPenyewa" value="" class="form-control here" type="text" required>
                                 </div>
                               </div>
 
@@ -74,7 +74,7 @@
                               <div class="form-group row">
                                 <label for="deskripsi" class="col-4 col-form-label">Catatan</label> 
                                 <div class="col-8">
-                                  <textarea id="deskripsi" name="catatan" class="form-control here"></textarea>
+                                  <textarea id="deskripsi" name="catatan" class="form-control here" required></textarea>
                                 </div>
                               </div>
 
